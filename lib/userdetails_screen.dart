@@ -1,7 +1,6 @@
 import 'package:employee_details/models.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class Userdetails extends StatelessWidget {
   Userdetails({super.key, required this.User});
@@ -35,8 +34,8 @@ class Userdetails extends StatelessWidget {
                   height: 16,
                 ),
                 CircleAvatar(
-                  radius: 80,
-                  backgroundColor: Colors.deepPurpleAccent[100],
+                  radius: 120,
+                  backgroundColor: Colors.deepPurpleAccent[60],
                   backgroundImage: NetworkImage(User.image.toString()),
                 ),
                 Text(

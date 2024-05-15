@@ -81,7 +81,7 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         CircleAvatar(
                           radius: 40,
-                          backgroundColor: Colors.deepPurpleAccent[100],
+                          backgroundColor: Colors.deepPurpleAccent[60],
                           backgroundImage: NetworkImage(
                               dummyUser!.users![index].image.toString()),
                         ),
