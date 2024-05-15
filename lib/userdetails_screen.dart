@@ -1,5 +1,5 @@
 import 'package:employee_details/models.dart';
-
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class Userdetails extends StatelessWidget {
@@ -33,11 +33,46 @@ class Userdetails extends StatelessWidget {
                 SizedBox(
                   height: 16,
                 ),
-                CircleAvatar(
-                  radius: 120,
-                  backgroundColor: Colors.deepPurpleAccent[60],
-                  backgroundImage: NetworkImage(User.image.toString()),
+                // CachedNetworkImage(
+                //   imageUrl: User.image.toString(),
+                //   placeholder: (context, url) => CircularProgressIndicator(),
+                //   errorWidget: (context, url, error) => Icon(Icons.error),
+                // ),
+
+                // CachedNetworkImage(
+                //   imageUrl: User.image.toString(),
+                //   placeholder: (context, url) => CircularProgressIndicator(),
+                //   errorWidget: (context, url, error) => Icon(Icons.error),
+                // ),
+
+                CachedNetworkImage(
+                  imageUrl: User.image.toString(),
+                  imageBuilder: (context, imageProvider) => Container(
+                    height: 200,
+                    width: 200,
+                    decoration: BoxDecoration(
+                      border: Border.all(width: 2),
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                        image: imageProvider,
+                        fit: BoxFit.cover,
+                        // colorFilter: const ColorFilter.mode(
+                        //   Colors.red,
+                        //   BlendMode.colorBurn,
+                        // ),
+                      ),
+                    ),
+                  ),
+                  placeholder: (context, url) =>
+                      const CircularProgressIndicator(),
+                  errorWidget: (context, url, error) => const Icon(Icons.error),
                 ),
+
+                // CircleAvatar(
+                //   radius: 120,
+                //   backgroundColor: Colors.deepPurpleAccent[60],
+                //   backgroundImage: NetworkImage(User.image.toString()),
+                // ),
                 Text(
                   User.firstName!.toString() +
                       ' ' +
