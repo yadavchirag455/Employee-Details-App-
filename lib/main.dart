@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Office Employee',
+        title: 'Staff List',
         theme:
             ThemeData(appBarTheme: AppBarTheme(color: Colors.deepPurple[300])),
         home: HomePage());
